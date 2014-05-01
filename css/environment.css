@@ -1,0 +1,26 @@
+div.block {
+	width: 29px;
+	height: 29px;
+	float:left;		
+}
+
+div.pass {	
+	background-image: url(../images/pass.jpg);
+}
+
+
+div.wall {	
+	background-image: url(../images/wall.jpg);	
+}
+
+div.snake{
+	background-image: url(../images/snake.jpg);
+}
+
+div.cherry{
+	background-color: red;
+}
+
+div.dead{
+	background-color: black;
+}

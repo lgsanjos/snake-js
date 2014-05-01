@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link href="css/principal.css" rel="stylesheet" type="text/css" />
+        <link href="css/environment.css" rel="stylesheet" type="text/css" />
+        <title>Snake</title>
+        
+    </head>
+    <body>
+    	<div id="main">
+	        <div id="cabecalho">
+		        <h1>Snake</h1>
+		        <h2>State University of Maringá 2011</h2>
+		        <h3>Author: Luiz Guilherme S. Anjos e-mail: guilherme.sanjos@gmail.com</h3>
+		    	<h4>It might not work on chrome browser (Try firefox)</h4>
+	        </div>
+	        <br />
+	        <div id="corpo">
+				<div id="menu_esquerdo">
+					<ul>
+						<li><a onclick="newGame();">New game</a></li>
+						<li><a onclick="document.game.start();">Start</a></li>
+						<li><a onclick="document.game.stop();">Pause</a></li>
+						<li>&nbsp;</li>
+						<li>&nbsp;</li>
+						<li><h2>SandBox</h2></li>
+						<li>&nbsp;</li>
+						<li><h3>Snake</h3></li>
+						<li>Speed <input type="text" value="250" size="5" id="speed"/></li>
+						<li>Map <input type="text" value="21x16" size="7" id="mapsize"/></li>
+						<li><a onclick="document.game.snake.grow();">Grow</a></li>
+						<li>&nbsp;</li>
+						<li><h3>Cherry</h3></li>
+						<li>Max Active <input type="text" value="2" size="2" id="cherryMaxActive"/></li>
+						<li>Refresh (ms) <input type="text" value="5000" size="4" id="cherryRefreshTime"/></li>
+						<li>Rating (%) <input type="text" value="40" size="4" id="cherryRating"/></li>						
+					</ul>
+				</div>	
+				<div id="jogo"></div>
+	        </div>
+		</div>
+		
+		<script src="javascript/Brick.js"></script>
+		<script src="javascript/Timer.js"></script>
+		<script src="javascript/Cherry.js"></script>
+		<script src="javascript/CherriesManager.js"></script>
+		
+		<script src="javascript/TableGrid.js"></script>
+		<script src="javascript/Snake.js"></script>
+		<script src="javascript/Engine.js"></script>
+		
+		<script>
+			function splitMapSizeFormat(value) {
+				var splitedSize = value.split("x");
+				
+				if (splitedSize.length !== 2) {
+					throw ("O valor " + value + " não é válido, utilize o padrão 22x16.");
+				} 
+				return splitedSize;
+			}
+			
+			function newGame(){
+				var speed = window.document.getElementById("speed").value;
+				var size = splitMapSizeFormat( window.document.getElementById("mapsize").value );
+				startTheGame("jogo", size[0], size[1], speed);
+				
+				var cherryMaxActive = window.document.getElementById("cherryMaxActive").value;
+				document.game.setCherryMaxActive(cherryMaxActive);
+				
+				var cherryRefreshTime = window.document.getElementById("cherryRefreshTime").value;
+				document.game.setCherryRefreshTime(cherryRefreshTime);
+				
+				var cherryRating = window.document.getElementById("cherryRating").value;
+				document.game.setCherryRating(cherryRating);				
+				
+			}		
+			newGame();
+		</script>
+    </body>
+</html>

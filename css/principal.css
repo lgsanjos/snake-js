@@ -1,0 +1,93 @@
+
+
+body{
+	margin: 0px;
+	padding: 0px;
+	background: #333;
+	color: #ccc;
+	
+	overflow: auto;
+}
+
+h1 {
+	font-size: 160%;
+	line-height: 120%;
+	margin: 10px 0px;
+	padding: 0px;	
+}
+
+h2 {
+	font-size: 130%;
+	line-height: 110%;
+	font-weight: lighter;
+	
+	margin: 5px 0px; 
+}
+
+h3{
+	font-size: 100%;
+	line-height: 105%;
+	font-weight: lighter;
+	color: #999;
+	
+	margin: 3px 0px 3px 0px;
+}
+
+a:link,
+a:visited{
+	color: #fff;
+	text-decoration: none;
+}
+
+a:hover{
+	text-decoration: underline;
+}
+
+div#main {
+	
+	margin: 10px;
+	padding: 20px;
+	border: 10px solid #222;
+		
+	min-height: 620px;
+}
+
+div#main div#corpo{
+	min-height: 500px;
+	overflow: auto;
+		
+	border: 1px solid #222;
+	background: #303230;	
+}
+
+div#main div#corpo div#menu_esquerdo{
+	width: 170px;
+	float: left;
+	
+	height: inherit;
+	border-right: 2px solid #222;
+	
+}
+
+div#main div#corpo div#menu_esquerdo ul {
+	list-style: none;
+	width: 100%;
+	padding: 0px 0px 0px 10px;
+	
+}
+
+div#main div#corpo div#menu_esquerdo li {
+	width:100%;
+}
+
+div#main div#corpo div#menu_esquerdo input {
+	text-align: right;
+	right: 0px;
+}
+
+div#main div#corpo div#jogo{
+	float: left;
+	margin : 10px;
+	
+	
+}
