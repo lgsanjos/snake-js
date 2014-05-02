@@ -100,8 +100,8 @@ Game.prototype = {
 	
 	start:function() {
 				
-		document.onkeypress = function(e) {
-						
+		document.onkeydown = function(e) {
+			
 			if ( e.keyCode == 37) { document.game.snake.turnLeft();  return false; }
 			if ( e.keyCode == 38) { document.game.snake.moveUp();    return false; }
 			if ( e.keyCode == 39) { document.game.snake.turnRight(); return false; }
